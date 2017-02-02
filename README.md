@@ -9,6 +9,11 @@ policies that make its existence necessary. What you really want is a
 
 ## Installation
 
-Rename the script and copy it to a directory in your `$PATH`. For example:
+Use the install script:
+
+    $ ./install
+
+or rename the script and copy it to a directory in your `$PATH`. For example:
 
     $ install main.pl $HOME/.local/bin/passwordgenerator
+

@@ -1,0 +1,26 @@
+#!/usr/bin/env perl
+
+use v5.18;
+use strict;
+use warnings;
+
+my $BIN = 'main.pl';
+my $NAME = 'passwordgenerator';
+
+my @dirs = grep { -e $_ } split /:/, $ENV{PATH};
+my @home_dirs = grep { $_ =~ /^$ENV{HOME}/ } @dirs;
+
+say "Which directory do you want to install the program in?";
+my $l = @home_dirs;
+$l = int(log($l)/log(10)) + 2;
+while (my ($i, $dir) = each @home_dirs) {
+    my $i = sprintf("% ${l}d", $i);
+    say "  [$i]: $dir";
+}
+
+my $input = <STDIN>;
+chomp $input;
+die "Please choose a valid directory" if ($input < 0 or $input >= @home_dirs);
+
+my $dir = @home_dirs[$input];
+system("install $BIN $dir/$NAME");
