@@ -5,7 +5,7 @@ that contains lower- and upper-case letters and a number.
 
 This program neither endorses regular use of such passwords, nor security
 policies that make its existence necessary. What you really want is a
-[https://en.wikipedia.org/wiki/Password_manager](password manager).
+[password manager](https://en.wikipedia.org/wiki/Password_manager).
 
 ## Installation
 
